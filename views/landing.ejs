@@ -5,8 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ambuj Raj</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
-
+    <link href="https://fonts.googleapis.com/css?family=Poor+Story" rel="stylesheet">    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <style>
+      iframe{
+        width: 43vw; height: 24vw;
+        
+        /* width: 560px; height: 315px; */
+      }
+      /* @media (max-width: 480px){
+          iframe{
+              width: 150px; height: 70px;
+          }
+      } */
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,6 +26,29 @@
         <div class="navbar-brand"><a style="text-decoration: none;color: #605757;" href="/">Ambuj Raj</a></div>
     </div>
 </nav>
+<div class="container" style="margin-top: 4%;width: 30%;display: flex;justify-content: center;">
+
+<div class="g-ytsubscribe" data-channelid="UCNj8krJYML-KG22xyumvMww" data-layout="full" data-theme="default" data-count="default"></div>
+
+</div>
+<div>
+    <p style="font-size: 2vw;font-family: 'Poor Story', cursive;text-align: center;">Subscribe Here....</h2>
+  <div style="position: fixed;background-color: #243447;bottom: 0;left: 0;right: 0;padding-top: 4%;">
+     <div class="row">
+         <% body["items"].forEach(function(items){ %>
+            <% var ur = 'https://www.youtube.com/embed/'+items["id"]["videoId"]+'?rel=0&amp;controls=0&amp;showinfo=0'; %>
+            <div class="col-md-6">
+            <div class="container">
+                <iframe class="embed-responsive-item" src="<%= ur %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                <div class="caption">
+                    <p style="font-size: 1.2rem;color: white;"><%=items["snippet"]["title"] %></>
+                </div>
+            </div>
+            </div>
+        <% }); %>
+     </div>
+  </div>      
+
 
 </body>
 </html>
